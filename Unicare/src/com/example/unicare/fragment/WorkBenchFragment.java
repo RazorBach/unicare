@@ -82,7 +82,7 @@ public class WorkBenchFragment extends Fragment implements OnClickListener{
 	 */
 	private void initData() {
 		JSONObject sendData = new JSONObject();
-		sendData.put("userid",5);
+//		sendData.put("userid",5);
 		new ThreadUtil(handler, sendData, ThreadUtil.MonAnalysisList);
 	}
 
