@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="blue">#10a9e0</color>
+	<color name="text_blue">#0ea8db</color>
+	<color name="grey">#c3c2c2</color>  
+	<color name="text_grey">#959494</color>  
+	<color name="select_p">#e0e0e0</color>
+    <color name="select_n">#ffffff</color>
+    <color name="line_color">#8bc6d9</color>
+    <color name="white">#ffffff</color>
+</resources>

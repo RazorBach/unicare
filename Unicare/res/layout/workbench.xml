@@ -1,0 +1,368 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue" >
+
+        <TextView
+            android:id="@+id/tv_title_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:alpha="0.98"
+            android:gravity="center"
+            android:text="浙江移动"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_textsize"
+            android:textStyle="bold" />
+
+        
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_alarm"
+                android:layout_width="fill_parent"
+                android:layout_height="101.5dp"
+                android:background="@drawable/item_select_style" >
+
+                <ImageView
+                    android:id="@+id/iv_alarm"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="7.5dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="27dp"
+                    android:background="@drawable/icon_alarm" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="105dp"
+                    android:layout_toRightOf="@id/iv_alarm"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="27dp" >
+
+                        <TextView
+                            android:id="@+id/l1_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="实时告警"
+                            android:textColor="@color/text_blue"
+                            android:textSize="@dimen/big_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/l1_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:text="11:45"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/alarm_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="17dp"
+                        android:layout_marginTop="7dp"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:gravity="fill"
+                        android:text="宁波市网元NBOBSC025告警号7604站号:40265在扫描周期:2014-09-11 23:00:002014-09-11 23:10:00 发生6次,超过门限值5"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                style="@style/line_style"
+                android:layout_marginLeft="92.5dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_nethealth"
+                android:layout_width="fill_parent"
+                android:layout_height="101.5dp"
+                android:background="@drawable/item_select_style" >
+
+                <ImageView
+                    android:id="@+id/iv_nethealth"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="7.5dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="25.5dp"
+                    android:background="@drawable/icon_nethealth" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="105dp"
+                    android:layout_toRightOf="@id/iv_nethealth"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25.5dp" >
+
+                        <TextView
+                            android:id="@+id/l2_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="网络健康度"
+                            android:textColor="@color/text_blue"
+                            android:textSize="@dimen/big_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/l2_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:text="11:45"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/nethealth_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="17dp"
+                        android:layout_marginTop="7dp"                        
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:gravity="fill"
+                        android:text="宁波市网元NBOBSC025告警号7604站号:40265在扫描周期:2014-09-11 23:00:002014-09-11 23:10:00 发生6次,超过门限值5"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <View
+                style="@style/line_style"
+                android:layout_marginLeft="92.5dp" />
+            <RelativeLayout
+                android:id="@+id/rl_patrol"
+                android:layout_width="fill_parent"
+                android:layout_height="101.5dp"
+                android:background="@drawable/item_select_style" >
+
+                <ImageView
+                    android:id="@+id/iv_patrol"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="7.5dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="25.5dp"
+                    android:background="@drawable/icon_patrol" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="105dp"
+                    android:layout_toRightOf="@id/iv_patrol"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25.5dp" >
+
+                        <TextView
+                            android:id="@+id/l3_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="每日巡检"
+                            android:textColor="@color/text_blue"
+                            android:textSize="@dimen/big_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/l3_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:text="11:45"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/patrol_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="17dp"
+                        android:layout_marginTop="7dp"                        
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:gravity="fill"
+                        android:text="宁波市网元NBOBSC025告警号7604站号:40265在扫描周期:2014-09-11 23:00:002014-09-11 23:10:00 发生6次,超过门限值5"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <View
+                style="@style/line_style"
+                android:layout_marginLeft="92.5dp" />
+            <RelativeLayout
+                android:id="@+id/rl_outservice"
+                android:layout_width="fill_parent"
+                android:layout_height="101.5dp"
+                android:background="@drawable/item_select_style" >
+
+                <ImageView
+                    android:id="@+id/iv_outservice"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="7.5dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="25.5dp"
+                    android:background="@drawable/icon_outservice" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="105dp"
+                    android:layout_toRightOf="@id/iv_outservice"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25.5dp" >
+
+                        <TextView
+                            android:id="@+id/l4_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="基站退服"
+                            android:textColor="@color/text_blue"
+                            android:textSize="@dimen/big_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/l4_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:text="11:45"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/outservice_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="17dp"
+                        android:layout_marginTop="7dp"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:gravity="fill"
+                        android:text="宁波市网元NBOBSC025告警号7604站号:40265在扫描周期:2014-09-11 23:00:002014-09-11 23:10:00 发生6次,超过门限值5"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+            <View
+                style="@style/line_style"
+                android:layout_marginLeft="92.5dp" />
+            <RelativeLayout
+                android:id="@+id/rl_flashout"
+                android:layout_width="fill_parent"
+                android:layout_height="101.5dp"
+                android:background="@drawable/item_select_style" >
+
+                <ImageView
+                    android:id="@+id/iv_flashout"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="7.5dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="25.5dp"
+                    android:background="@drawable/icon_flashout" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="105dp"
+                    android:layout_toRightOf="@id/iv_flashout"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25.5dp" >
+
+                        <TextView
+                            android:id="@+id/l5_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="闪退告警"
+                            android:textColor="@color/text_blue"
+                            android:textSize="@dimen/big_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/l5_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:text="11:45"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/flashout_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="17dp"
+                        android:layout_marginTop="7dp"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:gravity="fill"
+                        android:text="宁波市网元NBOBSC025告警号7604站号:40265在扫描周期:2014-09-11 23:00:002014-09-11 23:10:00 发生6次,超过门限值5"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

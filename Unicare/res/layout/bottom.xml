@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 底部导航 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#eee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <com.example.unicare.views.MyviewPager 
+            android:id="@+id/tabpager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+        </com.example.unicare.views.MyviewPager >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_workbench"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:alpha="0.95"
+            android:background="#10a9e0"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iv_workbench"
+                android:layout_width="30.5dp"
+                android:layout_height="38.5dp"
+                android:background="@drawable/menu_tab1_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_function"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:alpha="0.95"
+            android:background="#10a9e0"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iv_function"
+                android:layout_width="30.5dp"
+                android:layout_height="38.5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/menu_tab2_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_statistics"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:alpha="0.95"
+            android:background="#10a9e0"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iv_statistics"
+                android:layout_width="30.5dp"
+                android:layout_height="38.5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/menu_tab3_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:alpha="0.95"
+            android:background="#10a9e0"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="30.5dp"
+                android:layout_height="38.5dp"
+                android:background="@drawable/menu_tab4_style" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
