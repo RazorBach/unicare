@@ -1,8 +1,75 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.unicare.activity.MainActivity"
-    tools:ignore="MergeRootFrame" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue" >
+
+        <TextView
+            android:id="@+id/tv_title_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="功能"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_textsize"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43.5dp"
+        android:layout_marginRight="43.5dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/baseSiteAlarmFunction"
+            style="@style/FunctionLinearLayout" >
+
+            <ImageView
+                style="@style/FunctionImageView"
+                android:src="@drawable/function1" />
+
+            <TextView
+                style="@style/FunctionTextView"
+                android:text="基站告警" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/BSCAlarmFunction"
+            style="@style/FunctionLinearLayout" >
+
+            <ImageView
+                style="@style/FunctionImageView"
+                android:src="@drawable/function2" />
+
+            <TextView
+                style="@style/FunctionTextView"
+                android:text="BSC告警" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ENBAlarmFunction"
+            style="@style/FunctionLinearLayout" >
+
+            <ImageView
+                style="@style/FunctionImageView"
+                android:src="@drawable/function3" />
+
+            <TextView
+                style="@style/FunctionTextView"
+                android:layout_width="match_parent"
+                android:text="eNodeB告警" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

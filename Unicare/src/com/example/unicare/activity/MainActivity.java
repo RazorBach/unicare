@@ -1,5 +1,15 @@
 package com.example.unicare.activity;
 
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.unicare.R;
 import com.example.unicare.fragment.FunctionFragment;
@@ -8,26 +18,13 @@ import com.example.unicare.fragment.StatisticsFragment;
 import com.example.unicare.fragment.WorkBenchFragment;
 import com.example.unicare.views.MyviewPager;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.content.IntentFilter;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
 /*
  * 工作台页面
  * @author ch
  */
 
 public class MainActivity extends FragmentActivity {
-	
+
 	private MyviewPager viewPager;
 	public static MainActivity instance;
 	private WorkBenchFragment workBenchFragment;
@@ -63,7 +60,7 @@ public class MainActivity extends FragmentActivity {
 		viewPager.setAdapter(new TabAdapter(getSupportFragmentManager(), 4));
 		viewPager.setOffscreenPageLimit(0);
 		instance = MainActivity.this;
-		
+
 	}
 
 	private class TabAdapter extends FragmentStatePagerAdapter {
@@ -89,10 +86,11 @@ public class MainActivity extends FragmentActivity {
 			}
 			case 2: {
 				if (statisticsFragment == null)
-					statisticsFragment = new StatisticsFragment(MainActivity.this);				
+					statisticsFragment = new StatisticsFragment(
+							MainActivity.this);
 				return statisticsFragment;
 			}
-			case 3: 
+			case 3:
 				if (settingFragment == null)
 					settingFragment = new SettingFragment(MainActivity.this);
 				return settingFragment;
@@ -119,7 +117,7 @@ public class MainActivity extends FragmentActivity {
 		}
 
 	}
-	
+
 	/**
 	 * ͷ��������
 	 */
@@ -135,7 +133,7 @@ public class MainActivity extends FragmentActivity {
 			viewPager.setCurrentItem(index);
 		}
 	};
-	
+
 	/*
 	 * 页卡切换监听(原作者:D.Winter)
 	 */
@@ -187,8 +185,5 @@ public class MainActivity extends FragmentActivity {
 		public void onPageScrollStateChanged(int arg0) {
 		}
 	}
-	
-
-
 
 }

@@ -1,17 +1,6 @@
 package com.example.unicare.fragment;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import org.json.JSONException;
-import org.json.JSONObject;
-
-
-import com.example.unicare.R;
-import com.example.unicare.activity.MainActivity;
-import com.example.unicare.threads.ThreadUtil;
-import com.example.unicare.common.Tool;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,57 +8,47 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 
-/*
- * 工作台
- * @author ch
- */
-
+import com.example.unicare.R;
+import com.example.unicare.common.Tool;
 
 @SuppressLint("ValidFragment")
-public class WorkBenchFragment extends Fragment implements OnClickListener{
+public class WorkBenchFragment extends Fragment implements OnClickListener {
 
 	private Context context;
-	private ImageView iv_alarm;
+	private View view;
 	
 	// handler是主线程与子线程通讯的句柄
-		private Handler handler = new Handler() {
-			@Override
-			public void handleMessage(Message msg) {
-				Bundle bundle = msg.getData();
-				if (msg.what == 1) {
-					// 成功获取服务器端数据
-					try {
-						JSONObject jo = new JSONObject(bundle.getString("data"));
-						receiveDataSuccuess(jo);
-					} catch (Exception e) {
-						e.printStackTrace();
-						Tool.ShowMessage(context, "抱歉，返回数据处理异常");
-					}
-				} else {
-					Tool.ShowMessage(context, "网络不太好哦，请检查~");
+	private Handler handler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			Bundle bundle = msg.getData();
+			if (msg.what == 1) {
+				// 成功获取服务器端数据
+				try {
+					receiveDataSuccuess(bundle.getString("data"));
+				} catch (Exception e) {
+					e.printStackTrace();
+					Tool.ShowMessage(context, "抱歉，返回数据处理异常");
 				}
-
+			} else {
+				Tool.ShowMessage(context, "网络不太好哦，请检查~");
 			}
-		};
+		}
+	};
 
 	public WorkBenchFragment() {
-		
+
 	}
-	
+
 	public WorkBenchFragment(Context context) {
 		this.context = context;
 	}
+
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -81,9 +60,7 @@ public class WorkBenchFragment extends Fragment implements OnClickListener{
 	 * 通过intent以及sharedpreference等初始化views的数据
 	 */
 	private void initData() {
-		JSONObject sendData = new JSONObject();
-		sendData.put("userid",5);
-		new ThreadUtil(handler, sendData, ThreadUtil.MonAnalysisList);
+		
 	}
 
 	/**
@@ -91,7 +68,6 @@ public class WorkBenchFragment extends Fragment implements OnClickListener{
 	 */
 	private void requestData() {
 		
-
 	}
 
 	@Override
@@ -100,7 +76,6 @@ public class WorkBenchFragment extends Fragment implements OnClickListener{
 		View view = inflater.inflate(R.layout.workbench, container, false);
 		Tool.ShowMessage(context, "sjdkjask");
 		return view;
-		
 	}
 
 	/**
@@ -110,21 +85,21 @@ public class WorkBenchFragment extends Fragment implements OnClickListener{
 	 *            服务器端返回的json格式的数据
 	 * @throws JSONException
 	 */
-	protected void receiveDataSuccuess(JSONObject jo) throws JSONException {
+	protected void receiveDataSuccuess(String jsonData) throws JSONException {
 		initView();
 	}
-	
-	
+
 	private void initView() {
-		// TODO Auto-generated method stub
+		
+		
+		
+		
 		
 	}
 
 	@Override
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-		
-		
+
 	}
 
 }
