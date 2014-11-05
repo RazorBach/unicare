@@ -10,8 +10,8 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.example.unicare.R;
@@ -22,9 +22,7 @@ import com.example.unicare.response.MonitorAlarmInfoResponse.AlarmInfo;
 import com.example.unicare.threads.ThreadUtil;
 import com.google.gson.Gson;
 
-@SuppressLint("ValidFragment")
-public class SettingFragment extends Fragment implements OnClickListener {
-
+public class Temp extends Fragment implements OnClickListener {
 	private Context context;
 	private Gson gson = new Gson();
 	private View view;
@@ -50,11 +48,11 @@ public class SettingFragment extends Fragment implements OnClickListener {
 		}
 	};
 
-	public SettingFragment() {
+	public Temp() {
 
 	}
 
-	public SettingFragment(Context context) {
+	public Temp(Context context) {
 		this.context = context;
 	}
 
@@ -76,13 +74,17 @@ public class SettingFragment extends Fragment implements OnClickListener {
 	 * 向服务器发送请求数据
 	 */
 	private void requestData() {
-		
+		int id = 839922;
+		MonitorAlarmInfo monitorAlarmInfo = new MonitorAlarmInfo(id);
+		String sendData = gson.toJson(monitorAlarmInfo);
+		new Thread(new ThreadUtil(handler, sendData,
+				ThreadUtil.MONITOR_ALARM_INFO)).start();
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.change_password, container, false);
+		view = inflater.inflate(R.layout.alarm_detail, container, false);
 		return view;
 	}
 
@@ -94,7 +96,26 @@ public class SettingFragment extends Fragment implements OnClickListener {
 	protected void receiveDataSuccuess(String jsonData) throws JSONException {
 		MonitorAlarmInfoResponse response = gson.fromJson(jsonData,
 				MonitorAlarmInfoResponse.class);
+		
+		TextView alarmNum = (TextView) view.findViewById(R.id.monAlarmNum);
+		TextView neName = (TextView) view.findViewById(R.id.monNeName);
+		TextView siteId = (TextView) view.findViewById(R.id.monSiteId);
+		TextView siteName = (TextView) view.findViewById(R.id.monSiteName);
+		TextView alarmTime = (TextView) view.findViewById(R.id.monAlarmTime);
+		TextView alarmCell = (TextView) view.findViewById(R.id.monAlarmCell);
+		TextView alarmAnnex = (TextView) view.findViewById(R.id.monAlarmAnnex);
+		TextView guide = (TextView) view.findViewById(R.id.monGuide);
 
+		AlarmInfo alarmInfo = response.getARecord();
+
+		alarmNum.setText(String.valueOf(alarmInfo.getAlarmNum()));
+		neName.setText(alarmInfo.getNeName());
+		siteId.setText(String.valueOf(alarmInfo.getSiteId()));
+		siteName.setText(alarmInfo.getSiteName());
+		alarmTime.setText(alarmInfo.getAlarmTime());
+		alarmCell.setText(alarmInfo.getAlarmCell());
+		alarmAnnex.setText(alarmInfo.getAlarmAnnex());
+		guide.setText(alarmInfo.getGuide());
 	}
 
 	@Override

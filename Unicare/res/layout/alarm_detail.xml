@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue" >
+
+        <TextView
+            android:id="@+id/tv_title_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="告警详细信息"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_textsize"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/alarm_detail_background"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:padding="12dp" >
+
+            <RelativeLayout
+                style="@style/InfoTextLayout"
+                android:layout_width="match_parent" >
+
+                <TextView
+                    android:id="@+id/monAlarmNumTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="告警号：" />
+
+                <TextView
+                    android:id="@+id/monAlarmNum"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monAlarmNumTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monAlarmTimeTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="告警时间：" />
+
+                <TextView
+                    android:id="@+id/monAlarmTime"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monAlarmTimeTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monNeNameTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="网元名称：" />
+
+                <TextView
+                    android:id="@+id/monNeName"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monNeNameTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monAlarmCellTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="告警单元：" />
+
+                <TextView
+                    android:id="@+id/monAlarmCell"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monAlarmCellTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monSiteIdTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="站号：" />
+
+                <TextView
+                    android:id="@+id/monSiteId"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monSiteIdTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monSiteNameTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="基站名称：" />
+
+                <TextView
+                    android:id="@+id/monSiteName"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monSiteNameTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monAlarmAnnexTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="附加信息：" />
+
+                <TextView
+                    android:id="@+id/monAlarmAnnex"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monAlarmAnnexTitle" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/InfoTextLayout" >
+
+                <TextView
+                    android:id="@+id/monGuideTitle"
+                    style="@style/InfoTextTitle"
+                    android:text="处理意见：" />
+
+                <TextView
+                    android:id="@+id/monGuide"
+                    style="@style/InfoTextContent"
+                    android:layout_toRightOf="@id/monGuideTitle" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

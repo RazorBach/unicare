@@ -1,17 +1,7 @@
 package com.example.unicare.fragment;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-
-import com.example.unicare.R;
-import com.example.unicare.activity.MainActivity;
-import com.example.unicare.threads.ThreadUtil;
-import com.example.unicare.common.Tool;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,22 +9,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 
-/*
- * 工作台
- * @author ch
- */
-
+import com.example.unicare.R;
+import com.example.unicare.common.Tool;
 
 @SuppressLint("ValidFragment")
 public class FunctionFragment extends Fragment implements OnClickListener{
@@ -94,7 +75,7 @@ public class FunctionFragment extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.workbench, container, false);
+		View view = inflater.inflate(R.layout.function, container, false);
 		
 		return view;
 	}
@@ -113,7 +94,6 @@ public class FunctionFragment extends Fragment implements OnClickListener{
 	
 	@Override
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 

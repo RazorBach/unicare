@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -16,10 +16,114 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-	
+
     <style name="line_style">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0.5dp</item>
         <item name="android:background">@color/line_color</item>
     </style>
+
+    <!-- 详细信息页布局 -->
+    <style name="InfoTextLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginBottom">7dp</item>
+    </style>
+
+    <style name="InfoTextTitle">
+        <item name="android:width">67.5dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">#0ea3db</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="InfoTextContent">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 功能列表 -->
+    <style name="FunctionLinearLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:focusable">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="FunctionImageView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">32.5dp</item>
+    </style>
+
+    <style name="FunctionTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:textColor">@color/text_blue</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 设置列表 -->
+    <style name="SettingRelativeLayout">
+        <item name="android:layout_height">63.5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="SettingTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">34dp</item>
+        <item name="android:textColor">@color/text_blue</item>
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="SettingImageView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">23dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@drawable/setting_enter</item>
+    </style>
+
+    <style name="SettingLine">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#e0e0e0</item>
+    </style>
+
+    <!-- 修改密码 -->
+    <style name="ChangePasswordED">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">135dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 设置选项里的按钮 -->
+    <style name="SettingButton">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">116dp</item>
+        <item name="android:background">@drawable/green_button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

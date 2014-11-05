@@ -1,8 +1,112 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.unicare.activity.MainActivity"
-    tools:ignore="MergeRootFrame" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue" >
+
+        <TextView
+            android:id="@+id/tv_title_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_textsize"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_account"
+        style="@style/SettingRelativeLayout"
+        android:background="@drawable/item_select_style" >
+
+        <TextView
+            style="@style/SettingTextView"
+            android:text="账号" />
+
+        <ImageView style="@style/SettingImageView" />
+    </RelativeLayout>
+
+    <View style="@style/SettingLine" />
+
+    <RelativeLayout
+        android:id="@+id/rl_message_notification"
+        style="@style/SettingRelativeLayout"
+        android:background="@drawable/item_select_style" >
+
+        <TextView
+            style="@style/SettingTextView"
+            android:text="消息通知" />
+
+        <ImageView style="@style/SettingImageView" />
+    </RelativeLayout>
+
+    <View style="@style/SettingLine" />
+
+    <RelativeLayout
+        android:id="@+id/rl_version_update"
+        style="@style/SettingRelativeLayout"
+        android:background="@drawable/item_select_style" >
+
+        <TextView
+            style="@style/SettingTextView"
+            android:text="版本更新" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="23dp"
+            android:text="已经是最新版本"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View style="@style/SettingLine" />
+
+    <RelativeLayout
+        android:id="@+id/rl_feedback"
+        style="@style/SettingRelativeLayout"
+        android:background="@drawable/item_select_style" >
+
+        <TextView
+            style="@style/SettingTextView"
+            android:text="意见反馈" />
+
+        <ImageView style="@style/SettingImageView" />
+    </RelativeLayout>
+
+    <View style="@style/SettingLine" />
+
+    <RelativeLayout
+        android:id="@+id/rl_about"
+        style="@style/SettingRelativeLayout"
+        android:background="@drawable/item_select_style" >
+
+        <TextView
+            style="@style/SettingTextView"
+            android:text="关于" />
+
+        <ImageView style="@style/SettingImageView" />
+    </RelativeLayout>
+
+    <View style="@style/SettingLine" />
+    <!--
+         <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff" />
+    -->
+
+</LinearLayout>

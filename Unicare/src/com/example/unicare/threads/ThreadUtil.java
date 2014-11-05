@@ -1,14 +1,5 @@
 package com.example.unicare.threads;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.example.unicare.activity.MainActivity;
-import com.example.unicare.threads.RemoteApiImpl;
-
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -21,17 +12,17 @@ import android.util.Log;
  * 
  */
 public class ThreadUtil implements Runnable {
-	// ---------注册登录模块-------------------//
+
+	// ID保持跟word的序号一样
 	public static final int REGISTER = 0;
 	public static final int LOGIN = 1;
-	public static final int MonAnalysisList=3;
-	
+	public static final int MONITOR_ALARM_INFO = 3;
 
 	private Handler handler;
-	private JSONObject sendData;
+	private String sendData;
 	int action;
 
-	public ThreadUtil(Handler handler, JSONObject sendData, int action) {
+	public ThreadUtil(Handler handler, String sendData, int action) {
 		super();
 		this.handler = handler;
 		this.sendData = sendData;
@@ -43,34 +34,19 @@ public class ThreadUtil implements Runnable {
 		Bundle bundle = new Bundle();
 		Message msg = new Message();
 		try {
-			JSONObject jsonData = request(action);
+			String jsonData = request(action);
 			if (jsonData != null) {
-				try {
-					String e1 = jsonData.getString("nulldata");
-					Log.e("nulldata", e1);
-					msg.what = -1;
-				} catch (JSONException je1) {
-					// 说明jsonData中不存在"nulldata"
-					try {
-						String e2 = jsonData.getString("sendfail");
-						bundle.putString("sendfail", e2);
-						msg.what = 0;
-					} catch (JSONException je2) {
-						// 说明jsonData中不存在"sendfail"
-						// 获取数据成功，返回数据给主线程
-						bundle.putString("data", jsonData.toString());
-						msg.setData(bundle);
-						msg.what = 1;
-					}
-				}
+				bundle.putString("data", jsonData);
+				msg.setData(bundle);
+				msg.what = 1;
 			} else {
 				Log.e("jdNull", "jsonData为空");
-				msg.what = -2;
+				msg.what = -1;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			Log.e("connException", "连接服务器失败,请检查网络");
-			msg.what = -3;
+			msg.what = -2;
 		} finally {
 			msg.setData(bundle);
 			handler.sendMessage(msg);
@@ -84,16 +60,12 @@ public class ThreadUtil implements Runnable {
 	 * @return
 	 * @throws Exception
 	 */
-	private JSONObject request(int action) throws Exception {
+	private String request(int action) throws Exception {
 		switch (action) {
-		// ---------注册登录模块-------------------//
-		
-		case LOGIN:
-			return RemoteApiImpl.userLogin(sendData);
-		case MonAnalysisList:
-			return RemoteApiImpl.getmonAnalysisList(sendData);
-		default:
-			return null;
+			case MONITOR_ALARM_INFO:
+				return RemoteApiImpl.getMonitorAlarmInfo(sendData);
+			default:
+				return null;
 		}
 	}
 }
